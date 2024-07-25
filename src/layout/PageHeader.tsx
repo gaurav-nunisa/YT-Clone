@@ -1,4 +1,5 @@
-import { Menu, Upload, Bell, User, Search, Mic ,} from "lucide-react";
+
+import { Menu, Upload, Bell, User, Search, Mic ,ArrowLeft} from "lucide-react";
 import { Button } from "../components/Button";
 import { useState } from "react";
 export function PageHeader() {
@@ -17,9 +18,11 @@ export function PageHeader() {
         
 
         <form className={`  gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
-        <Button type="button" size="icon" className="flex-shrink-0">
-            <Mic />
+          
+        <Button onClick={()=> setshowFullWidthSearch(false)}type="button" size="icon" className="flex-shrink-0">
+            <ArrowLeft />
           </Button>
+
           <div className="flex flex-grow max-w-[600px]">
             <input
               type="search"
@@ -31,7 +34,7 @@ export function PageHeader() {
               <Search />
             </Button>
           </div>
-         
+
           <Button type="button" size="icon" className="flex-shrink-0">
             <Mic />
           </Button>
